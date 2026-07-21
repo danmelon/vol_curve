@@ -1,0 +1,23 @@
+Module 1 - Black-Scholes in code
+    > Derive BS from PDE/Martingale.
+    > Implement black_scholes_price() and greeks() module from scratch, including put call parity as a unit test.
+
+Module 2 - Implied Volatility Inversion
+    > Concept: why IV is a "wrong number in the right model" mapping from price.
+        > IV is a root-finding problem.
+    > Implement Newton-Raphson with vega as derivative, then Brent's method as a robust fallback.
+
+Module 3 - Getting Real Market Data & Real Smile
+    > Pull option chain data, clean, plot IV vs strike/moneyness for a single expiry.
+
+Module 4 - Smile Parametrisation
+    > Raw SVI formula, what each parameter controls intuitively, and why practicioners prefer parametric fits.
+        > Implement least squares SVI with scipy.optimize.
+    
+Module 5 - No-Arb Conditions
+    > Butterfly arbitrage and calendar arbitrage (total variance must be non-decreasing in time)
+    > Checks/penalties in your SVI calibration to enforce these.
+
+Module 6 - Stitching Expiries into a full surface
+    > Interpolating/extrapolating SVI parameters across maturities.
+    > Implement a VolSurface class exposing iv(strike, expiry).
