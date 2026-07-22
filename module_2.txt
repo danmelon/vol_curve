@@ -1,0 +1,19 @@
+Implied Volatility:
+
+Black Scholes gives us C=F(S, K, T, r, sigma)... Prices as a function of vol.
+But the market doesn't quote sigma. We have to observe it, by looking at C_market and invert to get vol.
+sigma_implied = f^-1(C_market)
+> There is no closed form for this inverse. f is not algebraically invertible in sigma. So it's a root-finding problem:
+    g(sigma) = BS(sigma) - C_market = 0
+
+> NEWTON-RAPHSON: uses derivative to jump toward the root.
+sigma_{n+1} = sigma_n - g(sigma_n)/g'(sigma_n) = sigma_n - (BS(sigma_n) - C_market)/vega(sigma_n)
+
+    > This method breaks down when you have an option that is deep OTM close to expiry. In this scenario vega -> 0.
+        > Above equation would then have to divide by 0 or close to 0, sending the Newton step to a nonsensical sigma.
+        > In the case of 0DTE, far OTM strikes, we would use BRENT'S METHOD.
+            > Brackets [sigma_low, sigma_high] where g changes sign.
+                > This is much slower per-iteration than Newton, but it doesn't fail. Always converges so long as bracket is valid.
+
+
+
