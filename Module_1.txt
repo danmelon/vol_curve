@@ -1,0 +1,11 @@
+GBM:
+dS_t​=μS_t * ​dt + σS_t​ * dW_t​
+
+Set up replicating portfolio:
+Π=V−ΔS
+
+dV=(∂V/∂t)​dt+(∂V/∂S)dS+(1/2)​σ^2 * S^2 * (∂^2V/∂S^2)​dt
+
+> dΠ=(∂t/∂V​+1/2​ * σ^2 * S^2 * ∂^2S/∂V^2​)dt+(∂V/∂S​−Δ)dS
+
+The rest is put-call parity , black scholes PDE, Black Scholes formula
