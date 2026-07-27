@@ -1,0 +1,10 @@
+SVI - Parametrisation
+
+Raw SVI formula gives total implied variance w(k) = sigma_BS(k)^2 * T as a function of log-moneyness k=ln(K/F)
+    > w(k) = a + b(rho(k-m)+sqrt((k-m)^2+sigma^2))
+    - 'a' controls vertical level... overall height of the variance curve (roughly the minimum variance)
+    - 'b' controls angle/steepness of wings... how fast variance grows away from the minimum (scales both wings together)
+    - 'rho' controls rotation/skew... tilts the smile (negative rho which is typical in equities makes the left wing (puts) steeper than the right)
+    - 'm' controls horizontal shift... location (in k) of the smile's minimum
+    - 'sigma' controls curvature at the minimum... how peaked/rounded the smile is near ATM; small sigma -> sharp V, large sigma -> smooth U
+
