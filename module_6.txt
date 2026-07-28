@@ -1,0 +1,4 @@
+Full Surface:
+Interpolate total variance in T at fixed k, not the raw SVI params.
+Interpolating a,b,rho,m,sigma across maturities doesn't preserve the no-arb properties + can produce weird shapes.
+Interpolating w(k,T) linearly in T at fixed k is standard practice and extrapolation is flat beyond quoted expiries.
