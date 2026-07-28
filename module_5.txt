@@ -1,0 +1,14 @@
+No Arbitrage Conditions:
+
+Two separate arbitrage types:
+
+> Butterfly Arbitrage (violates within single expiry):
+    > The implied risk-neutral density must be non-negative everywhere.
+    > Derived via the Durreleman function g(k) -- Combination of w, w', w'' that must satisfy g(k)=> 0 for all k.
+    > Also simple necessary condition from Roger Lee's moment formula: the asymptotic slopes of the wings are b(1+p) & b(1-p).
+        > and both must be <= 4 in the T-scaled sense, or the wings imply negative density eventually.
+
+> Calendar Arbitrage (violates across expiries):
+    > Total variance at a fixed k must be non-decreasing in T. Intuitively, variance accumulates over time
+        > it can't "decrease" as you look further out or you could construct a calendar spread that's a static arbitrage.
+    
